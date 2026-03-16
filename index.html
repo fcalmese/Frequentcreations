@@ -1,269 +1,146 @@
-export default function FrequentCreationsHomepage() { const featuredSports = [ { title: 'East Dragons', subtitle: 'Local team spirit and bold dragon energy', accent: 'from-red-600 to-orange-500', symbol: '🐉', }, { title: 'Black & Gold Fan Shirt', subtitle: 'Game-day inspired black and gold style', accent: 'from-yellow-400 to-amber-600', symbol: '🏈', }, { title: 'Cleveland Basketball Fan', subtitle: 'City pride with strong contrast graphics', accent: 'from-yellow-500 to-orange-500', symbol: '🏀', }, ];
+<!DOCTYPE html>
+<html>
+<head>
+<title>Frequent Creations</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-const christian = [ { title: 'BELIEVE!', subtitle: 'Praying hands and bold faith statement', symbol: '🙏', }, { title: 'My Sword Is In My Heart', subtitle: 'Winged heart and cross concept', symbol: '✝️', }, { title: 'GSD — God Saves Daily', subtitle: 'Clean faith-based typography', symbol: '✨', }, ];
+<style>
 
-const products = [ 'Custom shirts', 'Sports designs', 'Christian apparel', 'Tumblers', 'Custom stickers', 'Window treatments', ];
+body{
+font-family:Arial;
+margin:0;
+background:#f4f4f4;
+}
 
-const process = [ { step: '01', title: 'Pick a design or describe it', text: 'Choose from the sports or Christian collection, or explain the look you want created from scratch.', }, { step: '02', title: 'Send details by form', text: 'Tell Frequent Creations your size, color, idea, and design notes so the order can be shaped the right way.', }, { step: '03', title: 'Finalize by email and pay', text: 'Approve the design through email and complete payment with PayPal once everything looks right.', }, ];
+header{
+background:#1e3a8a;
+color:white;
+padding:20px;
+text-align:center;
+}
 
-return ( <div className="min-h-screen bg-slate-100 text-slate-900"> <header className="sticky top-0 z-40 border-b border-sky-100 bg-white/90 backdrop-blur"> <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8"> <div> <div className="text-3xl font-bold italic tracking-tight text-blue-900 sm:text-4xl"> Frequent Creations </div> <div className="mt-1 flex items-center gap-3 text-base italic text-cyan-700 sm:text-lg"> <span className="h-px w-12 bg-cyan-400" /> <span>Bringing Ideas to Life</span> <span className="h-px w-12 bg-cyan-400" /> </div> </div> <nav className="hidden gap-6 text-sm font-semibold md:flex"> <a href="#collections" className="hover:text-cyan-700">Collections</a> <a href="#custom" className="hover:text-cyan-700">Custom Orders</a> <a href="#pricing" className="hover:text-cyan-700">Pricing</a> <a href="#contact" className="hover:text-cyan-700">Contact</a> </nav> </div> </header>
+nav{
+background:#111;
+padding:10px;
+text-align:center;
+}
 
-<main>
-    <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top_right,_rgba(8,145,178,0.12),_transparent_28%),radial-gradient(circle_at_left,_rgba(30,64,175,0.09),_transparent_35%),linear-gradient(to_bottom,_#ffffff,_#f8fafc)]">
-      <div className="absolute inset-0 opacity-40">
-        <div className="absolute left-0 top-20 h-64 w-64 rounded-full bg-cyan-200 blur-3xl" />
-        <div className="absolute right-0 top-10 h-72 w-72 rounded-full bg-blue-200 blur-3xl" />
-      </div>
+nav a{
+color:white;
+margin:10px;
+text-decoration:none;
+font-weight:bold;
+}
 
-      <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-2 lg:px-8 lg:py-20">
-        <div className="flex flex-col justify-center">
-          <div className="inline-flex w-fit rounded-full border border-cyan-200 bg-white px-4 py-2 text-sm font-bold text-cyan-800 shadow-sm">
-            Scan to shop • Email to order • Custom work welcome
-          </div>
-          <h1 className="mt-6 text-4xl font-black leading-tight text-slate-900 sm:text-5xl lg:text-6xl">
-            Shirts and merch built from your vision.
-          </h1>
-          <p className="mt-5 max-w-xl text-lg leading-8 text-slate-600">
-            Browse sports designs, shop faith apparel, or send your own idea. Frequent Creations helps customers turn concepts into custom shirts, tumblers, stickers, and window graphics.
-          </p>
+.hero{
+padding:60px 20px;
+text-align:center;
+background:white;
+}
 
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-            <a href="#collections" className="rounded-2xl bg-blue-900 px-6 py-4 text-center text-base font-semibold text-white shadow-lg shadow-blue-900/20 transition hover:-translate-y-0.5">
-              View Collections
-            </a>
-            <a href="#custom" className="rounded-2xl border border-slate-300 bg-white px-6 py-4 text-center text-base font-semibold text-slate-900 shadow-sm transition hover:border-cyan-600 hover:text-cyan-700">
-              Start Custom Order
-            </a>
-          </div>
+.section{
+padding:40px 20px;
+max-width:900px;
+margin:auto;
+}
 
-          <div className="mt-8 grid max-w-xl grid-cols-1 gap-4 sm:grid-cols-3">
-            <div className="rounded-3xl bg-white p-4 shadow-sm ring-1 ring-slate-200">
-              <div className="text-2xl font-black text-blue-900">$25</div>
-              <div className="mt-1 text-sm text-slate-600">Small to XL</div>
-            </div>
-            <div className="rounded-3xl bg-white p-4 shadow-sm ring-1 ring-slate-200">
-              <div className="text-2xl font-black text-blue-900">$30</div>
-              <div className="mt-1 text-sm text-slate-600">2XL to 4XL</div>
-            </div>
-            <div className="rounded-3xl bg-white p-4 shadow-sm ring-1 ring-slate-200">
-              <div className="text-2xl font-black text-blue-900">PayPal</div>
-              <div className="mt-1 text-sm text-slate-600">Easy checkout</div>
-            </div>
-          </div>
-        </div>
+.card{
+background:white;
+padding:20px;
+margin:20px 0;
+border-radius:10px;
+box-shadow:0 5px 10px rgba(0,0,0,0.1);
+}
 
-        <div className="grid gap-4 sm:grid-cols-2">
-          <div className="rounded-[30px] bg-slate-950 p-6 text-white shadow-2xl">
-            <div className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-300">Sports spotlight</div>
-            <div className="mt-3 text-2xl font-black">East Dragons</div>
-            <div className="mt-2 text-sm leading-6 text-slate-300">Built to feel bold, local, and loud — perfect for fans, parents, and supporters.</div>
-            <div className="mt-6 rounded-[26px] border border-white/10 bg-gradient-to-br from-red-700 via-red-600 to-orange-500 p-8 text-center shadow-inner">
-              <div className="text-xl font-black tracking-[0.25em] text-orange-100">EAST</div>
-              <div className="mt-2 text-7xl">🐉</div>
-              <div className="mt-2 text-3xl font-black tracking-[0.2em] text-orange-100">DRAGONS</div>
-            </div>
-          </div>
+button{
+background:#1e3a8a;
+color:white;
+padding:12px 20px;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
 
-          <div className="space-y-4">
-            <div className="rounded-[30px] bg-white p-6 shadow-xl ring-1 ring-slate-200">
-              <div className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-700">Faith spotlight</div>
-              <div className="mt-3 text-xl font-black">BELIEVE!</div>
-              <div className="mt-4 rounded-[24px] bg-slate-950 p-6 text-center text-white">
-                <div className="text-6xl">🙏</div>
-                <div className="mt-3 text-3xl font-black text-yellow-300">BELIEVE!</div>
-              </div>
-            </div>
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:20px;
+}
 
-            <div className="rounded-[30px] bg-white p-6 shadow-xl ring-1 ring-slate-200">
-              <div className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-700">Custom order</div>
-              <div className="mt-3 text-xl font-black">Bring your own idea</div>
-              <p className="mt-2 text-sm leading-6 text-slate-600">
-                Don’t have a finished design? Describe it, send a reference, and Frequent Creations will work with you by email to nail it down.
-              </p>
-              <div className="mt-4 rounded-2xl bg-cyan-50 px-4 py-3 text-sm font-semibold text-cyan-800 ring-1 ring-cyan-200">
-                Best for customs, events, churches, teams, and business merch.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+</style>
+</head>
 
-    <section id="collections" className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-      <div className="max-w-2xl">
-        <p className="text-sm font-bold uppercase tracking-[0.2em] text-cyan-700">Collections</p>
-        <h2 className="mt-2 text-3xl font-black text-slate-900 sm:text-4xl">What customers can shop right now</h2>
-        <p className="mt-4 text-lg leading-8 text-slate-600">
-          The homepage leads with the sections that already match your uploaded designs: sports, Christian apparel, and custom merchandise.
-        </p>
-      </div>
+<body>
 
-      <div className="mt-8 grid gap-6 lg:grid-cols-3">
-        <div className="rounded-[30px] bg-white p-7 shadow-sm ring-1 ring-slate-200">
-          <div className="flex items-center justify-between">
-            <div className="text-sm font-bold uppercase tracking-[0.2em] text-cyan-700">Sports Collection</div>
-            <span className="text-2xl">🏆</span>
-          </div>
-          <h3 className="mt-3 text-2xl font-black">Bold local and fan-driven designs</h3>
-          <p className="mt-3 text-slate-600">Built around the sports looks you uploaded, with strong contrast and aggressive energy.</p>
-          <div className="mt-6 space-y-3">
-            {featuredSports.map((item) => (
-              <div key={item.title} className="overflow-hidden rounded-2xl ring-1 ring-slate-200">
-                <div className={`bg-gradient-to-r ${item.accent} px-4 py-3 text-white`}>
-                  <div className="flex items-center justify-between">
-                    <div className="font-bold">{item.title}</div>
-                    <div className="text-2xl">{item.symbol}</div>
-                  </div>
-                </div>
-                <div className="bg-white px-4 py-3 text-sm text-slate-600">{item.subtitle}</div>
-              </div>
-            ))}
-          </div>
-        </div>
+<header>
+<h1>Frequent Creations</h1>
+<p>Bringing Ideas to Life</p>
+</header>
 
-        <div className="rounded-[30px] bg-white p-7 shadow-sm ring-1 ring-slate-200">
-          <div className="flex items-center justify-between">
-            <div className="text-sm font-bold uppercase tracking-[0.2em] text-cyan-700">Christian Collection</div>
-            <span className="text-2xl">✝️</span>
-          </div>
-          <h3 className="mt-3 text-2xl font-black">Faith designs with a clean message</h3>
-          <p className="mt-3 text-slate-600">Styled from the praying hands, cross, wings, and scripture-inspired looks you uploaded.</p>
-          <div className="mt-6 space-y-3">
-            {christian.map((item) => (
-              <div key={item.title} className="rounded-2xl bg-slate-50 px-4 py-4 ring-1 ring-slate-200">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-slate-900 text-xl text-white">{item.symbol}</div>
-                  <div>
-                    <div className="font-bold text-slate-900">{item.title}</div>
-                    <div className="text-sm text-slate-500">{item.subtitle}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+<nav>
+<a href="#shirts">Shirts</a>
+<a href="#custom">Custom Orders</a>
+<a href="#pricing">Pricing</a>
+<a href="#contact">Contact</a>
+</nav>
 
-        <div className="rounded-[30px] bg-blue-900 p-7 text-white shadow-sm">
-          <div className="flex items-center justify-between">
-            <div className="text-sm font-bold uppercase tracking-[0.2em] text-cyan-200">Merchandise</div>
-            <span className="text-2xl">🛍️</span>
-          </div>
-          <h3 className="mt-3 text-2xl font-black">More than just shirts</h3>
-          <p className="mt-3 text-blue-100">Customers can also request matching merchandise and custom add-ons for events, businesses, or gifts.</p>
-          <div className="mt-6 grid gap-3">
-            {products.map((item) => (
-              <div key={item} className="rounded-2xl border border-white/15 bg-white/10 px-4 py-4 font-medium">
-                {item}
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="custom" className="bg-slate-950 py-16 text-white">
-      <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:px-8">
-        <div>
-          <p className="text-sm font-bold uppercase tracking-[0.2em] text-cyan-300">Custom Orders</p>
-          <h2 className="mt-2 text-3xl font-black sm:text-4xl">No design? No problem.</h2>
-          <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-300">
-            This section is built around your real offer: customers can upload a design or simply explain the image in their head, then work back and forth through email until the final version is right.
-          </p>
-
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
-            {process.map((item) => (
-              <div key={item.step} className="rounded-[26px] border border-white/10 bg-white/5 p-5">
-                <div className="text-sm font-black tracking-[0.2em] text-cyan-300">{item.step}</div>
-                <div className="mt-3 text-lg font-black">{item.title}</div>
-                <div className="mt-2 text-sm leading-6 text-slate-300">{item.text}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="rounded-[32px] bg-white p-6 text-slate-900 shadow-2xl">
-          <div className="text-sm font-bold uppercase tracking-[0.2em] text-cyan-700">Quick request</div>
-          <div className="mt-2 text-2xl font-black">Start your order</div>
-          <div className="mt-6 space-y-4">
-            <input className="w-full rounded-2xl border border-slate-200 px-4 py-3 placeholder:text-slate-400" placeholder="Full name" />
-            <input className="w-full rounded-2xl border border-slate-200 px-4 py-3 placeholder:text-slate-400" placeholder="Email address" />
-            <select className="w-full rounded-2xl border border-slate-200 px-4 py-3">
-              <option>Select collection</option>
-              <option>Sports Collection</option>
-              <option>Christian Collection</option>
-              <option>Custom Design</option>
-              <option>Merchandise</option>
-            </select>
-            <textarea className="min-h-[130px] w-full rounded-2xl border border-slate-200 px-4 py-3 placeholder:text-slate-400" placeholder="Describe your idea, shirt color, size, event, or upload request details..." />
-            <button className="w-full rounded-2xl bg-blue-900 px-5 py-4 font-semibold text-white shadow-lg shadow-blue-900/20 transition hover:-translate-y-0.5">
-              Send Request
-            </button>
-          </div>
-          <p className="mt-4 text-sm leading-6 text-slate-500">
-            Requests go to frequentcreations@gmail.com and are finalized by email with PayPal payment.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="pricing" className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-      <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-        <div>
-          <p className="text-sm font-bold uppercase tracking-[0.2em] text-cyan-700">Pricing</p>
-          <h2 className="mt-2 text-3xl font-black sm:text-4xl">Straight pricing, easy to understand</h2>
-          <p className="mt-4 max-w-xl text-lg leading-8 text-slate-600">
-            The homepage keeps pricing simple so customers know what to expect before they reach out.
-          </p>
-        </div>
-        <div className="grid gap-5 sm:grid-cols-2">
-          <div className="rounded-[30px] bg-white p-7 shadow-sm ring-1 ring-slate-200">
-            <div className="text-4xl font-black text-blue-900">$25</div>
-            <div className="mt-2 text-xl font-black">Small to XL</div>
-            <p className="mt-3 text-slate-600">Regular shirt pricing for most single custom orders and stock designs.</p>
-          </div>
-          <div className="rounded-[30px] bg-white p-7 shadow-sm ring-1 ring-slate-200">
-            <div className="text-4xl font-black text-blue-900">$30</div>
-            <div className="mt-2 text-xl font-black">2XL to 4XL</div>
-            <p className="mt-3 text-slate-600">Larger sizes with the same design support and email follow-up process.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" className="bg-white py-16">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="rounded-[34px] border border-slate-200 bg-gradient-to-r from-slate-50 to-cyan-50 p-8 shadow-sm lg:p-10">
-          <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
-            <div>
-              <p className="text-sm font-bold uppercase tracking-[0.2em] text-cyan-700">Contact</p>
-              <h2 className="mt-2 text-3xl font-black text-slate-900 sm:text-4xl">Contact FC for images, ideas, and details</h2>
-              <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-600">
-                This is the part that ties directly to your business card. A customer scans the QR code, lands here, browses, and reaches out to start the order.
-              </p>
-            </div>
-            <a href="mailto:frequentcreations@gmail.com" className="inline-flex items-center justify-center rounded-2xl bg-blue-900 px-6 py-4 text-base font-semibold text-white shadow-lg shadow-blue-900/20 transition hover:-translate-y-0.5">
-              Email Frequent Creations
-            </a>
-          </div>
-
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
-            <div className="rounded-2xl bg-white p-5 ring-1 ring-slate-200">
-              <div className="text-sm font-bold uppercase tracking-[0.16em] text-slate-500">Phone</div>
-              <div className="mt-2 text-lg font-black text-slate-900">330-474-9041</div>
-            </div>
-            <div className="rounded-2xl bg-white p-5 ring-1 ring-slate-200">
-              <div className="text-sm font-bold uppercase tracking-[0.16em] text-slate-500">Email</div>
-              <div className="mt-2 break-all text-lg font-black text-slate-900">frequentcreations@gmail.com</div>
-            </div>
-            <div className="rounded-2xl bg-white p-5 ring-1 ring-slate-200">
-              <div className="text-sm font-bold uppercase tracking-[0.16em] text-slate-500">Payment</div>
-              <div className="mt-2 text-lg font-black text-slate-900">PayPal accepted</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+<div class="hero">
+<h2>Shirts and Merch Built From Your Vision</h2>
+<p>Browse sports designs, Christian apparel, or request your own custom shirt.</p>
 </div>
 
-); }
+<div class="section" id="shirts">
+
+<div class="card">
+<h3>Sports Shirts</h3>
+<p>East Dragons and Cleveland themed designs.</p>
+</div>
+
+<div class="card">
+<h3>Christian Apparel</h3>
+<p>BELIEVE • Faith Inspired Designs</p>
+</div>
+
+<div class="card">
+<h3>Custom Designs</h3>
+<p>Send your idea and we will build your design.</p>
+</div>
+
+</div>
+
+<div class="section" id="pricing">
+
+<div class="card">
+<h3>$25</h3>
+<p>Small to XL</p>
+</div>
+
+<div class="card">
+<h3>$30</h3>
+<p>2XL to 4XL</p>
+</div>
+
+</div>
+
+<div class="section" id="contact">
+
+<div class="card">
+<h3>Contact Frequent Creations</h3>
+
+<p>Email</p>
+<p>frequentcreations@gmail.com</p>
+
+<p>Phone</p>
+<p>330-474-9041</p>
+
+</div>
+
+</div>
+
+<footer>
+<p>© 2026 Frequent Creations</p>
+</footer>
+
+</body>
+</html>
