@@ -1,62 +1,154 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Frequent Creations</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #0f172a;
+      background: linear-gradient(to bottom, #0b2c8f, #111827);
       color: white;
       text-align: center;
     }
+
+    .container {
+      padding: 30px 20px 60px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
     h1 {
-      margin-top: 40px;
-      font-size: 40px;
-      letter-spacing: 3px;
+      margin: 0;
+      font-size: 52px;
+      letter-spacing: 2px;
     }
-    p {
-      color: #94a3b8;
+
+    .tagline {
+      margin-top: 12px;
+      margin-bottom: 40px;
+      font-size: 22px;
     }
-    .section {
-      margin: 40px;
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+      align-items: start;
     }
-    img {
-      width: 250px;
-      border-radius: 15px;
-      margin-top: 15px;
+
+    .card h2 {
+      margin-bottom: 14px;
+      font-size: 28px;
+    }
+
+    .card img {
+      width: 100%;
+      max-width: 260px;
+      border-radius: 18px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .section-title {
+      margin-top: 70px;
+      font-size: 34px;
+    }
+
+    .section-text {
+      max-width: 900px;
+      margin: 15px auto 0;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .pricing-box {
+      max-width: 800px;
+      margin: 40px auto 0;
+      background: rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 30px 20px;
+    }
+
+    .pricing-box p {
+      margin: 10px 0;
+      font-size: 18px;
+    }
+
+    .contact-box {
+      max-width: 900px;
+      margin: 50px auto 0;
+      background: rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 30px 20px;
+    }
+
+    .contact-box p {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+
+    footer {
+      margin-top: 70px;
+      padding: 20px;
+      font-size: 15px;
+      opacity: 0.9;
     }
   </style>
 </head>
-
 <body>
+  <div class="container">
+    <h1>FREQUENT CREATIONS</h1>
+    <div class="tagline">Bringing Images To Life</div>
 
-<h1>FREQUENT CREATIONS</h1>
-<p>Bringing Images To Life</p>
+    <div class="hero-grid">
+      <div class="card">
+        <h2>Sports</h2>
+        <img src="https://raw.githubusercontent.com/fcalmese/Frequentcreations/main/images/football-dragon-black-shirt.png" alt="Sports shirt">
+      </div>
 
-<div style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px; margin-top:40px;">
+      <div class="card">
+        <h2>Faith</h2>
+        <img src="https://raw.githubusercontent.com/fcalmese/Frequentcreations/main/images/faith-believe-shirt-alt.png" alt="Faith shirt">
+      </div>
 
-  <!-- Sports -->
-  <div>
-    <h2>Sports</h2>
-    <img src="https://raw.githubusercontent.com/fcalmese/Frequentcreations/main/images/football-dragon-black-shirt.png" width="250" style="border-radius:15px;">
+      <div class="card">
+        <h2>Lifestyle</h2>
+        <img src="https://raw.githubusercontent.com/fcalmese/Frequentcreations/main/images/lifestyle-birthday-cake-shirt.png" alt="Lifestyle shirt">
+      </div>
+
+      <div class="card">
+        <h2>Merchandise</h2>
+        <img src="https://via.placeholder.com/260x320.png?text=Merchandise+Coming+Soon" alt="Merchandise placeholder">
+      </div>
+    </div>
+
+    <h2 class="section-title">Custom Apparel & Merchandise</h2>
+    <p class="section-text">
+      We bring custom images, logos, and ideas to life through apparel and merchandise.
+      Customers can choose from stock designs or request one-of-a-kind custom creations made from their own vision.
+    </p>
+
+    <div class="pricing-box">
+      <p><strong>Sizes Small to XL:</strong> $25</p>
+      <p><strong>Sizes 2X to 5X:</strong> $30</p>
+      <p><strong>Materials:</strong> Mostly 100% cotton. 50/50 blends, polos, warm-up shorts, and sportswear available upon request.</p>
+      <p><strong>Turnaround Time:</strong> Usually about two weeks for bulk orders.</p>
+      <p><strong>Return Policy:</strong> No returns on custom logos or finalized custom designs.</p>
+      <p><strong>Delivery:</strong> Two or more shirts delivered within a 15-mile radius of Akron, Ohio.</p>
+    </div>
+
+    <div class="contact-box">
+      <p><strong>Email:</strong> frequentcreation@gmail.com</p>
+      <p><strong>Location:</strong> Akron, Ohio</p>
+      <p><strong>Instagram:</strong> frequentcreations</p>
+      <p><strong>Facebook:</strong> frequentcreations</p>
+    </div>
+
+    <footer>
+      © 2026 Frequent Creations
+    </footer>
   </div>
-
-  <!-- Faith -->
-  <div>
-    <h2>Faith</h2>
-    <img src="https://raw.githubusercontent.com/fcalmese/frequentcreations/main/images/faith-faith-believe-shirt-alt.png"
-      width="250" style="border-radius:15px;">
-  </div>
-
-  <!-- Lifestyle -->
-  <div>
-    <h2>Lifestyle</h2>
-    <img
-    src="https://raw.githubusercontent.com/fcalmese/Frequentcreations/main/images/lifestyle-birthday-cake-shirt.png" 
-      width="250" style="border-radius:15px;">
-  </div>
-   
 </body>
 </html>
