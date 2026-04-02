@@ -932,22 +932,43 @@
         return;
       }
 
-      cartItems.innerHTML = cart.map(item => `
+      cartItems.innerHTML = cart.map((item,index)=>`
         <div class="cart-item">
           <div>
-            <div class="cart-item-name">${item.name}</div>
-            <div class="cart-item-meta">${item.price}</div>
+            <div class="cart-item-name" onclick="toggleCartSize(${index})"style="
+            cursor:pointer;">
+            $(item.name}
+            </div>
+            
+            <div class="cart-item-meta">${item.price}
           </div>
-          <div class="qty-controls">
-            <button type="button" onclick="changeQty('${item.name.replace(/'/g, "\\'")}', -1)">-</button>
-            <span>${item.qty}</span>
-            <button type="button" onclick="changeQty('${item.name.replace(/'/g, "\\'")}', 1)">+</button>
-          </div>
-        </div>
-      `).join('');
-    }
+          <div id="cart-size-${index}" style="display:none; margin-top:8px;">
+        <label><input type="radio" name="cart-size-${index}" value="S"> S</label><br>
+        <label><input type="radio" name="cart-size-${index}" value="M"> M</label><br>
+        <label><input type="radio" name="cart-size-${index}" value="L"> L</label><br>
+        <label><input type="radio" name="cart-size-${index}" value="XL"> XL</label><br>
+        <label><input type="radio" name="cart-size-${index}" value="2X"> 2X</label><br>
+        <label><input type="radio" name="cart-size-${index}" value="3X"> 3X</label><br>
+        <label><input type="radio" name="cart-size-${index}" value="4X"> 4X</label>
+      </div>
+    </div>
 
-    function openCart() {
+    <div class="qty-controls">
+      <button type="button" onclick="changeQty(${index}, -1)">-</button>
+      <span>${item.qty}</span>
+      <button type="button" onclick="changeQty(${index}, 1)">+</button>
+    </div>
+
+ </div>
+        </div>
+      `).join(");
+      }
+  function toggleCartSize(index) {
+  const menu = document.getElementById(`cart-size-${index}`);
+  menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+}
+
+ function openCart() {
       document.getElementById('cartPanel').classList.add('open');
     }
 
