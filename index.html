@@ -951,7 +951,7 @@
         <label><input type="radio" name="cart-size-${index}" value="3X"> 3X</label><br>
         <label><input type="radio" name="cart-size-${index}" value="4X"> 4X</label>
       </div>
-    </div>
+    
 
     <div class="qty-controls">
       <button type="button" onclick="changeQty(${index}, -1)">-</button>
@@ -959,9 +959,9 @@
       <button type="button" onclick="changeQty(${index}, 1)">+</button>
     </div>
 
- </div>
+ 
         </div>
-      `).join(");
+      `).join('');
       }
   function toggleCartSize(index) {
   const menu = document.getElementById(`cart-size-${index}`);
