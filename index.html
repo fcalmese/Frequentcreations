@@ -1,1 +1,1011 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frequent Creations</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --blue-dark: #143b9c;
+      --blue-mid: #3f73ff;
+      --nav-dark: #0f172a;
+      --text-dark: #111827;
+      --card-bg: #ffffff;
+      --page-bg: #f3f6fb;
+      --muted: #475569;
+      --border: #d8e0ef;
+      --accent: #1d4ed8;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', Arial, sans-serif;
+      background: var(--page-bg);
+      color: var(--text-dark);
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    header {
+      background: linear-gradient(to right, var(--blue-dark), var(--blue-mid));
+      text-align: center;
+      padding: 36px 20px 28px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(56px, 8vw, 98px);
+      font-weight: 400;
+      color: #0b1f66;
+      line-height: 1.05;
+      text-shadow: 2px 2px 6px rgba(0,0,0,.18);
+    }
+
+    header p {
+      margin: 8px 0 0;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(26px, 3.6vw, 52px);
+      font-weight: 700;
+      color: white;
+      line-height: 1.1;
+      text-shadow: 2px 2px 6px rgba(0,0,0,.30);
+    }
+
+    .top-bar {
+      background: var(--nav-dark);
+      color: white;
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 10px 18px;
+      flex-wrap: wrap;
+    }
+
+    .top-bar .left {
+      font-size: 30px;
+      font-weight:700;
+      letter-spacing: .3px;
+    }
+
+    .cart-button {
+      background: white;
+      color: var(--nav-dark);
+      border: none;
+      border-radius: 999px;
+      padding: 14px 22px;
+      font-weight: 700;
+      font-size:24px;      
+      cursor: pointer;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 42px 20px 24px;
+    }
+
+    .hero h2 {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(34px, 5vw, 62px);
+      font-weight: 700;
+      line-height: 1.15;
+    }
+
+    .hero p {
+      margin: 12px 0 0;
+      font-size: clamp(20px, 3vw, 36px);
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .catalog-title {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(34px, 4vw, 50px);
+      font-weight: 700;
+      margin: 28px 0 10px;
+    }
+
+    .section-title {
+      text-align: left;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(30px, 3vw, 48px);
+      font-weight: 700;
+      margin: 46px 20px 18px;
+      color: #111827;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-image-btn {
+      background: transparent;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+    }
+
+    .card-image {
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      background: #eef3fb;
+    }
+
+    .card-body {
+      padding: 14px 14px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .card-title {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .card-pricing {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .card-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: auto;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+      border: none;
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-weight: 700;
+      cursor: pointer;
+      width: 100%;
+      font-size: 15px;
+    }
+
+    .primary-btn {
+      background: var(--accent);
+      color: white;
+    }
+
+    .secondary-btn {
+      background: #e8eefc;
+      color: #12338d;
+    }
+
+    .pricing-note {
+      text-align: center;
+      margin: 18px 20px 0;
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .order-section {
+      padding: 52px 20px 70px;
+    }
+
+    .order-wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+      padding: 26px;
+    }
+
+    .order-wrap h2 {
+      margin: 0 0 10px;
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(30px, 4vw, 44px);
+    }
+
+    .order-wrap p {
+      text-align: center;
+      font-size: 20px;
+      margin: 0 0 24px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .form-grid .full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid #cfd8ea;
+      border-radius: 12px;
+      padding: 14px 16px;
+      font-size: 18px;
+      font-family: 'Poppins', Arial, sans-serif;
+      background: #fff;
+    }
+
+    textarea {
+      min-height: 170px;
+      resize: vertical;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .contact-actions a,
+    .contact-actions button {
+      flex: 1 1 220px;
+    }
+
+    .cart-panel {
+      position: fixed;
+      top: 0;
+      right: -420px;
+      width: 100%;
+      max-width: 420px;
+      height: 100%;
+      background: white;
+      box-shadow: -10px 0 30px rgba(0,0,0,.18);
+      z-index: 999;
+      transition: right .25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cart-panel.open {
+      right: 0;
+    }
+
+    .cart-header {
+      background: var(--nav-dark);
+      color: white;
+      padding: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .cart-close {
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    .cart-items {
+      padding: 18px;
+      overflow: auto;
+      flex: 1;
+    }
+
+    .cart-item {
+      border-bottom: 1px solid #e5e7eb;
+      padding: 12px 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .cart-item-name {
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .cart-item-meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .qty-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .qty-controls button {
+      width: 30px;
+      height: 30px;
+      border: none;
+      border-radius: 8px;
+      background: #e8eefc;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .cart-footer {
+      padding: 18px;
+      border-top: 1px solid #e5e7eb;
+      display: grid;
+      gap: 10px;
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.80);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 20px;
+    }
+
+    .modal.open {
+      display: flex;
+    }
+
+    .modal-content {
+      max-width: 900px;
+      width: 100%;
+      position: relative;
+    }
+
+    .modal-image {
+      width: 100%;
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: 16px;
+      background: white;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(0,0,0,.7);
+      color: white;
+      border: none;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    footer {
+      background: var(--nav-dark);
+      color: white;
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 16px;
+    }
+
+    @media (max-width: 720px) {
+      header h1 {
+        font-size: 62px;
+      }
+
+      header p {
+        font-size: 30px;
+      }
+
+      .top-bar {
+        justify-content: center;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        margin-left: 20px;
+      }
+    }
+    .full-head-image {
+      height:420px;
+      object-fit:contain;
+      object-position:top center;
+    }
+    .card-image {
+  width: 100%!important;
+  height: auto!important;
+  display: block!important;
+    }
+      .card{
+        height:auto!important;
+      }
+    
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Frequent Creations</h1>
+    <p>Bringing Ideas to Life</p>
+  </header>
+
+  <div class="top-bar">
+    <div class="left">Custom Orders • Starting at $25</div>
+    <button class="cart-button" type="button" onclick="openCart()">Cart (<span id="cartCount">0</span>)</button>
+  </div>
+
+  <section class="hero">
+    <h2>Create Your Own Custom Apparel</h2>
+    <p>T-Shirts • Logos • Merchandise • Stickers</p>
+  </section>
+
+  <h2 class="catalog-title">Catalog</h2>
+
+  <h3 class="section-title">Faith Designs</h3>
+  <div class="product-grid">
+    <div class="card">
+      <button class="card-image-btn" type="button" onclick="openImage('images/faith-believe-white-shirt.png')">
+        <img class="card-image full-head-image" src="images/faith-believe-white-shirt.png" alt="Faith Believe White Shirt">
+      </button>
+      <div class="card-body">
+        <p class="card-title">Faith Believe White Shirt</p>
+        <p class="card-pricing">S–XL: $25<br>2X–4X: $30</p>
+        <div id="size-menu-faith" style="display:none; margin-top:10px;">
+  <label style="font-weight:600;">Select Size:</label>
+
+ 
+    <label><input type="radio" name="size-faith" value="Small"> Small</label><br>
+    <label><input type="radio" name="size-faith" value="Medium"> Medium</label><br>
+    <label><input type="radio" name="size-faith" value="Large"> Large</label><br>
+    <label><input type="radio" name="size-faith" value="XL"> XL</label><br>
+    <label><input type="radio" name="size-faith" value="2X"> 2X</label><br>
+    <label><input type="radio" name="size-faith" value="3X"> 3X</label><br>
+    <label><input type="radio" name="size-faith" value="4X"> 4X</label>
+  
+</div>
+        <div class="card-actions">
+          <button class="primary-btn" type="button" onclick="toggleFaithSizeMenue()">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <button class="card-image-btn" type="button" onclick="openImage('images/faith-sword-in-my-heart-blue-shirt.png')">
+        <img class="card-image full-head-image" src="images/faith-sword-in-my-heart-blue-shirt.png" alt="Faith Sword In My Heart Blue Shirt">
+      </button>
+      <div class="card-body">
+        <p class="card-title">Faith Sword In My Heart Blue</p>
+        <p class="card-pricing">S–XL: $25<br>2X–4X: $30</p>
+        <div class="card-actions">
+          <button class="primary-btn" type="button" onclick="addToCart('Faith Sword In My Heart Blue','S–XL $25 / 2X–4X $30')">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <button class="card-image-btn" type="button" onclick="openImage('images/faith-believe-long-sleeve-shirt.png')">
+        <img class="card-image full-head-image" src="images/faith-believe-long-sleeve-shirt.png" alt="Faith Believe Long Sleeve">
+      </button>
+      <div class="card-body">
+        <p class="card-title">Faith Believe Long Sleeve</p>
+        <p class="card-pricing">S–XL: $25<br>2X–4X: $30</p>
+        <div class="card-actions">
+          <button class="primary-btn" type="button" onclick="addToCart('Faith Believe Long Sleeve','S–XL $25 / 2X–4X $30')">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <button class="card-image-btn" type="button" onclick="openImage('images/faith-gsd-black-shirt.png')">
+        <img class="card-image full-head-image" src="images/faith-gsd-black-shirt.png" alt="Faith GSD Black Shirt">
+      </button>
+      <div class="card-body">
+        <p class="card-title">Faith GSD Black Shirt</p>
+        <p class="card-pricing">S–XL: $25<br>2X–4X: $30</p>
+        <div class="card-actions">
+          <button class="primary-btn" type="button" onclick="addToCart('Faith GSD Black Shirt','S–XL $25 / 2X–4X $30')">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <button class="card-image-btn" type="button" onclick="openImage('images/faith-mens-grace-god-shirt.png')">
+        <img class="card-image full-head-image" src="images/faith-mens-grace-god-shirt.png" alt="Faith Mens Grace God Shirt">
+      </button>
+      <div class="card-body">
+        <p class="card-title">Faith Men's Grace God Shirt</p>
+        <p class="card-pricing">S–XL: $25<br>2X–4X: $30</p>
+        <div class="card-actions">
+          <button class="primary-btn" type="button" onclick="addToCart(`Faith Men's Grace God Shirt`,'S–XL $25 / 2X–4X $30')">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <button class="card-image-btn" type="button" onclick="openImage('images/faith-sword-in-my-heart-grey-shirt.png')">
+        <img class="card-image full-head-image" src="images/faith-sword-in-my-heart-grey-shirt.png" alt="Faith Sword In My Heart Grey Shirt">
+      </button>
+      <div class="card-body">
+        <p class="card-title">Faith Sword In My Heart Grey</p>
+        <p class="card-pricing">S–XL: $25<br>2X–4X: $30</p>
+        <div class="card-actions">
+          <button class="primary-btn" type="button" onclick="addToCart('Faith Sword In My Heart Grey','S–XL $25 / 2X–4X $30')">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="section-title">Athletic Designs</h3>
+  <div class="product-grid">
+    <div class="card">
+      <button class="card-image-btn" type="button" onclick="openImage('images/football-dragon-black-shirt.png')">
+        <img class="card-image full-head-image" src="images/football-dragon-black-shirt.png" alt="Football Dragon Black Shirt">
+      </button>
+      <div class="card-body">
+        <p class="card-title">Football Dragon Black</p>
+        <p class="card-pricing">S–XL: $25<br>2X–4X: $30</p>
+        <div class="card-actions">
+          <button class="primary-btn" type="button" onclick="addToCart('Football Dragon Black','S–XL $25 / 2X–4X $30')">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <button class="card-image-btn" type="button" onclick="openImage('images/football-dragon-dark-grey-shirt.png')">
+        <img class="card-image full-head-image" src="images/football-dragon-dark-grey-shirt.png" alt="Football Dragon Dark Grey Shirt">
+      </button>
+      <div class="card-body">
+        <p class="card-title">Football Dragon Dark Grey</p>
+        <p class="card-pricing">S–XL: $25<br>2X–4X: $30</p>
+        <div class="card-actions">
+          <button class="primary-btn" type="button" onclick="addToCart('Football Dragon Dark Grey','S–XL $25 / 2X–4X $30')">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <button class="card-image-btn" type="button" onclick="openImage('images/football-dragon-light-grey-shirt.png')">
+        <img class="card-image full-head-image" src="images/football-dragon-light-grey-shirt.png" alt="Football Dragon Light Grey Shirt">
+      </button>
+      <div class="card-body">
+        <p class="card-title">Football Dragon Light Grey</p>
+        <p class="card-pricing">S–XL: $25<br>2X–4X: $30</p>
+        <div class="card-actions">
+          <button class="primary-btn" type="button" onclick="addToCart('Football Dragon Light Grey','S–XL $25 / 2X–4X $30')">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <button class="card-image-btn" type="button" onclick="openImage('images/football-dragon-red-shirt.png')">
+        <img class="card-image full-head-image" src="images/football-dragon-red-shirt.png" alt="Football Dragon Red Shirt">
+      </button>
+      <div class="card-body">
+        <p class="card-title">Football Dragon Red</p>
+        <p class="card-pricing">S–XL: $25<br>2X–4X: $30</p>
+        <div class="card-actions">
+          <button class="primary-btn" type="button" onclick="addToCart('Football Dragon Red','S–XL $25 / 2X–4X $30')">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <button class="card-image-btn" type="button" onclick="openImage('images/football-dragon-custom-name-shirt.png')">
+        <img class="card-image full-head-image" src="images/football-dragon-custom-name-shirt.png" alt="Football Dragon Custom Name Shirt">
+      </button>
+      <div class="card-body">
+        <p class="card-title">Football Dragon Custom Name</p>
+        <p class="card-pricing">S–XL: $25<br>2X–4X: $30</p>
+        <div class="card-actions">
+          <button class="primary-btn" type="button" onclick="addToCart('Football Dragon Custom Name','S–XL $25 / 2X–4X $30')">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <button class="card-image-btn" type="button" onclick="openImage('images/football-dragon-warm-ups-red-black-interchangeable-set.png')">
+        <img class="card-image" src="images/football-dragon-warm-ups-red-black-interchangeable-set.png">
+      </button>
+      <div class="card-body">
+        <p class="card-title">Football Dragon Warm Ups Set</p>
+        <p class="card-pricing">S–XL: $25<br>2X–4X: $30</p>
+        <div class="card-actions">
+          <button class="primary-btn" type="button" onclick="addToCart('Football Dragon Warm Ups Set','S–XL $25 / 2X–4X $30')">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="section-title">Lifestyle Designs</h3>
+  <div class="product-grid">
+    <div class="card">
+      <button class="card-image-btn" type="button" onclick="openImage('images/lifestyle-father-son-shirt.png')">
+        <img class="card-image full-head-image" src="images/lifestyle-father-son-shirt.png" alt="Lifestyle Father Son Shirt">
+      </button>
+      <div class="card-body">
+        <p class="card-title">Lifestyle Father Son</p>
+        <p class="card-pricing">Custom Pricing by Order</p>
+        <div class="card-actions">
+          <button class="primary-btn" type="button" onclick="addToCart('Lifestyle Father Son','Custom Pricing')">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <button class="card-image-btn" type="button" onclick="openImage('images/lifestyle-dont-include-me-shirt.png')">
+        <img class="card-image full-head-image" src="images/lifestyle-dont-include-me-shirt.png" alt="Lifestyle Dont Include Me Shirt">
+      </button>
+      <div class="card-body">
+        <p class="card-title">Lifestyle Don't Include Me</p>
+        <p class="card-pricing">Custom Pricing by Order</p>
+        <div class="card-actions">
+          <button class="primary-btn" type="button" onclick="addToCart(`Lifestyle Don't Include Me`,'Custom Pricing')">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <button class="card-image-btn" type="button" onclick="openImage('images/lifestyle-love-rose-stems-shirt.png')">
+        <img class="card-image full-head-image" src="images/lifestyle-love-rose-stems-shirt.png" alt="Lifestyle Love Rose Stems Shirt">
+      </button>
+      <div class="card-body">
+        <p class="card-title">Lifestyle Love Rose Stems</p>
+        <p class="card-pricing">Custom Pricing by Order</p>
+        <div class="card-actions">
+          <button class="primary-btn" type="button" onclick="addToCart('Lifestyle Love Rose Stems','Custom Pricing')">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <button class="card-image-btn" type="button" onclick="openImage('images/lifestyle-love-squirrels-green-shirt.png')">
+        <img class="card-image full-head-image" src="images/lifestyle-love-squirrels-green-shirt.png" alt="Lifestyle Love Squirrels Green Shirt">
+      </button>
+      <div class="card-body">
+        <p class="card-title">Lifestyle Love Squirrels Green</p>
+        <p class="card-pricing">Custom Pricing by Order</p>
+        <div class="card-actions">
+          <button class="primary-btn" type="button" onclick="addToCart('Lifestyle Love Squirrels Green','Custom Pricing')">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <button class="card-image-btn" type="button" onclick="openImage('images/lifestyle-rose-heart-shirt.png')">
+        <img class="card-image full-head-image" src="images/lifestyle-rose-heart-shirt.png" alt="Lifestyle Rose Heart Shirt">
+      </button>
+      <div class="card-body">
+        <p class="card-title">Lifestyle Rose Heart</p>
+        <p class="card-pricing">Custom Pricing by Order</p>
+        <div class="card-actions">
+          <button class="primary-btn" type="button" onclick="addToCart('Lifestyle Rose Heart','Custom Pricing')">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <button class="card-image-btn" type="button" onclick="openImage('images/lifestyle-self-awareness-shirt.png')">
+        <img class="card-image full-head-image" src="images/lifestyle-self-awareness-shirt.png" alt="Lifestyle Self Awareness Shirt">
+      </button>
+      <div class="card-body">
+        <p class="card-title">Lifestyle Self Awareness</p>
+        <p class="card-pricing">Custom Pricing by Order</p>
+        <div class="card-actions">
+          <button class="primary-btn" type="button" onclick="addToCart('Lifestyle Self Awareness','Custom Pricing')">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="section-title">Stickers / Merch / Logos</h3>
+  <div class="product-grid">
+    <div class="card">
+      <button class="card-image-btn" type="button" onclick="openImage('images/merchandise-911-glass-tumbler.png')">
+        <img class="card-image" src="images/merchandise-911-glass-tumbler.png" alt="911 Glass Tumbler">
+      </button>
+      <div class="card-body">
+        <p class="card-title">911 Glass Tumbler</p>
+        <p class="card-pricing">Custom Pricing by Order</p>
+        <div class="card-actions">
+          <button class="primary-btn" type="button" onclick="addToCart('911 Glass Tumbler','Custom Pricing')">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <button class="card-image-btn" type="button" onclick="openImage('images/merchandise-cleveland-bulldog-coffee-tumbler.png')">
+        <img class="card-image" src="images/merchandise-cleveland-bulldog-coffee-tumbler.png" alt="Cleveland Bulldog Coffee Tumbler">
+      </button>
+      <div class="card-body">
+        <p class="card-title">Cleveland Bulldog Coffee Tumbler</p>
+        <p class="card-pricing">Custom Pricing by Order</p>
+        <div class="card-actions">
+          <button class="primary-btn" type="button" onclick="addToCart('Cleveland Bulldog Coffee Tumbler','Custom Pricing')">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <button class="card-image-btn" type="button" onclick="openImage('images/merchandise-elephant-wall-decal-sticker.png')">
+        <img class="card-image" src="images/merchandise-elephant-wall-decal-sticker.png" alt="Elephant Wall Decal Sticker">
+      </button>
+      <div class="card-body">
+        <p class="card-title">Elephant Wall Decal Sticker</p>
+        <p class="card-pricing">Custom Pricing by Order</p>
+        <div class="card-actions">
+          <button class="primary-btn" type="button" onclick="addToCart('Elephant Wall Decal Sticker','Custom Pricing')">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <button class="card-image-btn" type="button" onclick="openImage('images/merchandise-peacock-daily-planner-sticker.png')">
+        <img class="card-image" src="images/merchandise-peacock-daily-planner-sticker.png" alt="Peacock Daily Planner Sticker">
+      </button>
+      <div class="card-body">
+        <p class="card-title">Peacock Daily Planner Sticker</p>
+        <p class="card-pricing">Custom Pricing by Order</p>
+        <div class="card-actions">
+          <button class="primary-btn" type="button" onclick="addToCart('Peacock Daily Planner Sticker','Custom Pricing')">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <button class="card-image-btn" type="button" onclick="openImage('images/merchandise-rays-window-sticker.png')">
+        <img class="card-image" src="images/merchandise-rays-window-sticker.png" alt="Rays Window Sticker">
+      </button>
+      <div class="card-body">
+        <p class="card-title">Ray's Window Sticker</p>
+        <p class="card-pricing">Custom Pricing by Order</p>
+        <div class="card-actions">
+          <button class="primary-btn" type="button" onclick="addToCart(`Ray's Window Sticker`,'Custom Pricing')">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <button class="card-image-btn" type="button" onclick="openImage('images/merchandise-steelers-coffee-mug.png')">
+        <img class="card-image" src="images/merchandise-steelers-coffee-mug.png" alt="Steelers Coffee Mug">
+      </button>
+      <div class="card-body">
+        <p class="card-title">Steelers Coffee Mug</p>
+        <p class="card-pricing">Custom Pricing by Order</p>
+        <div class="card-actions">
+          <button class="primary-btn" type="button" onclick="addToCart('Steelers Coffee Mug','Custom Pricing')">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="order-section">
+    <div class="order-wrap">
+      <h2>Start Your Custom Order</h2>
+      <p>Choose a design, add it to your cart, then send your order details and design ideas below.</p>
+
+      <div class="form-grid">
+        <div>
+          <label for="name">Full Name</label>
+          <input id="name" type="text" placeholder="Enter your full name">
+        </div>
+
+        <div>
+          <label for="email">Email Address</label>
+          <input id="email" type="email" placeholder="Enter your email">
+        </div>
+
+        <div>
+          <label for="phone">Phone Number</label>
+          <input id="phone" type="text" placeholder="Enter your phone number">
+        </div>
+
+        <div>
+          <label for="size">Preferred Size</label>
+          <select id="size">
+            <option>Select size</option>
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+            <option>XL</option>
+            <option>2X</option>
+            <option>3X</option>
+            <option>4X</option>
+          </select>
+        </div>
+
+        <div class="full">
+          <label for="idea">Describe Your Idea</label>
+          <textarea id="idea" placeholder="Tell us exactly what you want. Colors, wording, event, shirt style, logo ideas, changes, quantities, and anything else important."></textarea>
+        </div>
+      </div>
+
+      <div class="contact-actions">
+        <button class="primary-btn" type="button" onclick="emailCart()">Email Order + Cart</button>
+        <a class="secondary-btn" href="mailto:info@frequentcreations.com" style="display:flex;align-items:center;justify-content:center;">Email Design Directly</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Frequent Creations © 2026
+  </footer>
+
+  <div id="cartPanel" class="cart-panel">
+    <div class="cart-header">
+      <span>Your Cart</span>
+      <button class="cart-close" type="button" onclick="closeCart()">×</button>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-footer">
+      <button class="primary-btn" type="button" onclick="emailCart()">Email Cart</button>
+      <button class="secondary-btn" type="button" onclick="clearCart()">Clear Cart</button>
+    </div>
+  </div>
+
+  <div id="imageModal" class="modal" onclick="closeImage(event)">
+    <div class="modal-content">
+      <button class="modal-close" type="button" onclick="forceCloseImage()">×</button>
+      <img id="modalImage" class="modal-image" src="" alt="Expanded product image">
+    </div>
+  </div>
+
+  <script>
+    let cart = JSON.parse(localStorage.getItem('fc_cart') || '[]');
+
+    function saveCart() {
+      localStorage.setItem('fc_cart', JSON.stringify(cart));
+      renderCart();
+    }
+
+    function addToCart(name, price) {
+      const existing = cart.find(item => item.name === name);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ name, price, qty: 1 });
+      }
+      saveCart();
+      openCart();
+    }
+
+    function changeQty(name, amount) {
+      const item = cart.find(i => i.name === name);
+      if (!item) return;
+      item.qty += amount;
+      if (item.qty <= 0) {
+        cart = cart.filter(i => i.name !== name);
+      }
+      saveCart();
+    }
+
+    function clearCart() {
+      cart = [];
+      saveCart();
+    }
+
+    function renderCart() {
+      const cartItems = document.getElementById('cartItems');
+      const cartCount = document.getElementById('cartCount');
+      const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
+      cartCount.textContent = totalCount;
+
+      if (cart.length === 0) {
+        cartItems.innerHTML = '<p style="font-size:18px; color:#475569;">Your cart is empty.</p>';
+        return;
+      }
+
+      cartItems.innerHTML = cart.map(item => `
+        <div class="cart-item">
+          <div>
+            <div class="cart-item-name">${item.name}</div>
+            <div class="cart-item-meta">${item.price}</div>
+          </div>
+          <div class="qty-controls">
+            <button type="button" onclick="changeQty('${item.name.replace(/'/g, "\\'")}', -1)">-</button>
+            <span>${item.qty}</span>
+            <button type="button" onclick="changeQty('${item.name.replace(/'/g, "\\'")}', 1)">+</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function openCart() {
+      document.getElementById('cartPanel').classList.add('open');
+    }
+
+    function closeCart() {
+      document.getElementById('cartPanel').classList.remove('open');
+    }
+
+    function openImage(src) {
+      document.getElementById('modalImage').src = src;
+      document.getElementById('imageModal').classList.add('open');
+    }
+
+    function closeImage(event) {
+      if (event.target.id === 'imageModal') {
+        forceCloseImage();
+      }
+    }
+
+    function forceCloseImage() {
+      document.getElementById('imageModal').classList.remove('open');
+      document.getElementById('modalImage').src = '';
+    }
+
+    function emailCart() {
+      const name = document.getElementById('name').value || '';
+      const email = document.getElementById('email').value || '';
+      const phone = document.getElementById('phone').value || '';
+      const size = document.getElementById('size').value || '';
+      const idea = document.getElementById('idea').value || '';
+
+      const cartLines = cart.length
+        ? cart.map(item => `${item.qty}x ${item.name} (${item.price})`).join('%0D%0A')
+        : 'No items in cart yet.';
+
+      const body =
+        `Name: ${name}%0D%0A` +
+        `Email: ${email}%0D%0A` +
+        `Phone: ${phone}%0D%0A` +
+        `Preferred Size: ${size}%0D%0A%0D%0A` +
+        `Order Details:%0D%0A${cartLines}%0D%0A%0D%0A` +
+        `Design Idea:%0D%0A${encodeURIComponent(idea)}`;
+
+      window.location.href = `mailto:info@frequentcreations.com?subject=Frequent Creations Order&body=${body}`;
+    }
+
+    renderCart();
+  </script>
+</body>
+  </html>
