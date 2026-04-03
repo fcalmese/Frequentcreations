@@ -922,58 +922,69 @@
     }
 
     function renderCart() {
-      const cartItems = document.getElementById('cartItems');
-      const cartCount = document.getElementById('cartCount');
-      const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
-      cartCount.textContent = totalCount;
+  const cartItems = document.getElementById('cartItems');
+  const cartCount = document.getElementById('cartCount');
 
-      if (cart.length === 0) {
-        cartItems.innerHTML = '<p style="font-size:18px; color:#475569;">Your cart is empty.</p>';
-        return;
-      }
+  const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
+  cartCount.textContent = totalCount;
 
-      cartItems.innerHTML = cart.map((item,index)=>`
-        <div class="cart-item">
-          <div>
-            <div class="cart-item-name" onclick="toggleCartSize(${index})"style="
-            cursor:pointer;">
-            $(item.name}
-            </div>
-            
-            <div class="cart-item-meta">${item.price}
-          </div>
-          <div id="cart-size-${index}" style="display:none; margin-top:8px;">
-        <label><input type="radio" name="cart-size-${index}" value="S"> S</label><br>
-        <label><input type="radio" name="cart-size-${index}" value="M"> M</label><br>
-        <label><input type="radio" name="cart-size-${index}" value="L"> L</label><br>
-        <label><input type="radio" name="cart-size-${index}" value="XL"> XL</label><br>
-        <label><input type="radio" name="cart-size-${index}" value="2X"> 2X</label><br>
-        <label><input type="radio" name="cart-size-${index}" value="3X"> 3X</label><br>
-        <label><input type="radio" name="cart-size-${index}" value="4X"> 4X</label>
+  if (cart.length === 0) {
+    cartItems.style.display = 'block';
+    cartItems.innerHTML = '<p style="font-size:18px; color:#475569;">Your cart is empty.</p>';
+    return;
+  }
+
+  cartItems.style.display = 'block';
+  cartItems.innerHTML = cart.map((item, index) => `
+    <div style="display:block; width:100%; border-bottom:1px solid #e5e7eb; padding:12px 0;">
+
+      <div onclick="toggleCartSize(${index})" style="font-weight:600; cursor:pointer; margin-bottom:4px;">
+        ${item.name}
       </div>
-    
 
-    <div class="qty-controls">
-      <button type="button" onclick="changeQty(${index}, -1)">-</button>
-      <span>${item.qty}</span>
-      <button type="button" onclick="changeQty(${index}, 1)">+</button>
-    </div>
+      <div style="font-size:14px; color:#64748b; margin-bottom:8px;">
+        ${item.price}
+      </div>
 
- 
-        </div>
-      `).join('');
-      }
-  function toggleCartSize(index) {
-  const menu = document.getElementById(`cart-size-${index}`);
-  menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+      <div id="cart-size-${index}" style="display:none; margin:8px 0;">
+        <label><input type="radio" name="cart-size-${index}" value="S" onchange="setCartSize(${index}, 'S')" ${item.size === 'S' ? 'checked' : ''}> S</label><br>
+        <label><input type="radio" name="cart-size-${index}" value="M" onchange="setCartSize(${index}, 'M')" ${item.size === 'M' ? 'checked' : ''}> M</label><br>
+        <label><input type="radio" name="cart-size-${index}" value="L" onchange="setCartSize(${index}, 'L')" ${item.size === 'L' ? 'checked' : ''}> L</label><br>
+        <label><input type="radio" name="cart-size-${index}" value="XL" onchange="setCartSize(${index}, 'XL')" ${item.size === 'XL' ? 'checked' : ''}> XL</label><br>
+        <label><input type="radio" name="cart-size-${index}" value="2X" onchange="setCartSize(${index}, '2X')" ${item.size === '2X' ? 'checked' : ''}> 2X</label><br>
+        <label><input type="radio" name="cart-size-${index}" value="3X" onchange="setCartSize(${index}, '3X')" ${item.size === '3X' ? 'checked' : ''}> 3X</label><br>
+        <label><input type="radio" name="cart-size-${index}" value="4X" onchange="setCartSize(${index}, '4X')" ${item.size === '4X' ? 'checked' : ''}> 4X</label>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:8px; margin-top:8px;">
+        <button type="button" onclick="changeQty(${index}, -1)">-</button>
+        <span>${item.qty}</span>
+        <button type="button" onclick="changeQty(${index}, 1)">+</button>
+      </div>
+      </div>
+  `).join('');
+}
+      function toggleCartSize(index) {
+  const menu = 
+    document.getElementById(`cart-size-$
+      {index}`);
+  menu.style.display = menu.style.display ===
+    'none' ? 'block' : 'none';
 }
 
- function openCart() {
-      document.getElementById('cartPanel').classList.add('open');
+function setCartSize(index, size) {
+  cart[index].size = size;
+  saveCart();
+}
+
+   function openCart() {
+      document.getElementById('cartPanel').class
+        List.add('open');
     }
 
     function closeCart() {
-      document.getElementById('cartPanel').classList.remove('open');
+      document.getElementById('cartPanel').class
+        List.remove('open');
     }
 
     function openImage(src) {
