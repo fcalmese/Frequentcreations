@@ -494,15 +494,30 @@
   <h3 class="section-title">Faith Designs</h3>
   <div class="product-grid">
     <div class="card">
-      <button class="card-image-btn" type="button" onclick="openImage('images/faith-believe-white-shirt.png')">
+      <button class="card-image-btn" 
+        type="button" onclick="openImage('images/faith-believe-white-shirt.png')">
         <img class="card-image full-head-image" src="images/faith-believe-white-shirt.png" alt="Faith Believe White Shirt">
       </button>
       <div class="card-body">
         <p class="card-title">Faith Believe White Shirt</p>
-        <p class="card-pricing">S–XL: $25<br>2X–4X: $30</p>
-        <div id="size-menu-faith" style="display:none; margin-top:10px;">
-  <label style="font-weight:600;">Select Size:</label>
+        <button class="primary-btn" onclick="toggleSizeMenue('faith-believe-white-menue')Add to Cart</button>
+          </div>
+      
+    <div id=faith-believe-white-menue "class="size-menue">
+  <select id="faith-believe-white-size">
+    <option value="">Choose size</option>
+    <option value="Small">Small</option>
+    <option value="Medium">Medium</option>
+    <option value="Large">Large</option>
+    <option value="XL">XL</option>
+    <option value="2X">2X</option>
+    <option value="3X">3X</option>
+    <option value="4X">4X</option>
+  </select>
 
+  <button class="confirm-btn" type="button" onclick="addSizedToCart('Faith Believe White Shirt', 'S-XL $25 / 2X-4X $30', 'faith-believe-white-size', 'faith-believe-white-menu')">
+    Confirm Size & Add
+  </button
  
     <label><input type="radio" name="size-faith" value="Small"> Small</label><br>
     <label><input type="radio" name="size-faith" value="Medium"> Medium</label><br>
@@ -514,8 +529,12 @@
   
 </div>
         <div class="card-actions">
-          <button class="primary-btn" type="button" onclick="toggleFaithSizeMenue()">Add to Cart</button>
-        </div>
+          <button class="primary-btn"
+            type="button" onclick="addSizedToCart('Faith Believe White Shirt';'S-XL $25 / 2X-4X $30',
+              'faith-believe-white-size',    
+               'faith-believe-white-menue')">
+                 Confirm Size & Add
+          </button>
       </div>
     </div>
 
